@@ -17,9 +17,9 @@ public class ReadWrite {
     }
 
 
-    public void writeToFile(String string, File file) throws Exception{
-        String str = String.format("\t\t<input type=\"text\" size=\"32\" placeholder=%s\"\" name=\"fee\" />\n",string);
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, false));
-        bufferedWriter.write(str);
+    public void writeToFile(String string, BufferedWriter fileWriter) throws Exception{
+        String str = String.format("\t\t<input type=\"text\" size=\"32\" placeholder=\"%s\" name=\"fee\" />\n",string);
+        fileWriter.write(str);
+        fileWriter.newLine();
     }
 }
